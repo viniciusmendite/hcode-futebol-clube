@@ -22,7 +22,7 @@ export default {
                 title: 'A inauguração do novo estádio será na semana que vem',
                 content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo alias, ut voluptatum corporis explicabo, consequatur ipsum facere magnam et dicta tenetur maxime aspernatur delectus laborum deserunt beatae optio eum culpa. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus saepe recusandae voluptatum dolores totam inventore praesentium nemo suscipit aliquid repellat cupiditate rerum culpa eveniet magnam, rem quos ducimus esse quasi?',
                 date: '2020-10-02',
-                img: 'news2.jpg',
+                img: 'news3.jpg',
                 imgInfo: 'Notícia 2'
             }
         ]
@@ -30,6 +30,13 @@ export default {
     getters: {
         getNews(state) {
             return state.news;
+        },
+        getNewsById: state => id => {
+            let notice = state.news.find(item => {
+                return (item.id == id);
+            });
+
+            return notice;
         }
     }
 }
