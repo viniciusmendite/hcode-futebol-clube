@@ -17,12 +17,14 @@
         <div class="links mr-2">
           <a
             href="#"
+            @click.prevent="$emit('change-component', 'home')"
             class="btn mr-5"
           >Início</a>
           <a
             href="#"
+            @click.prevent="$emit('change-component', 'news')"
             class="btn mr-5"
-          >Times</a>
+          >Notícias</a>
           <a
             href="#"
             class="btn mr-5"
