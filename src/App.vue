@@ -5,7 +5,6 @@
     @change-component="changeComponent"
     />
     <HcodeSection
-    :championship="championship"
     :current-component="currentSectionComponent"
     />
     <HcodeFooter />
@@ -16,7 +15,7 @@
 import HcodeHeader from './components/HcodeHeader';
 import HcodeFooter from './components/HcodeFooter';
 import HcodeSection from './components/HcodeSection';
-import { mapMutations } from 'vuex';
+import { mapMutations, mapActions } from 'vuex';
 
 export default {
   name: 'App',
@@ -31,9 +30,10 @@ export default {
       }
   },
   methods: {
-      ...mapMutations({
-        changeChampionship: 'setChampionship'
-      }),
+      ...mapActions(['changeChampionship']),
+    //   ...mapMutations({
+    //     changeChampionship: 'setChampionship'
+    //   }),
     //   changeChampionship(value) {
     //     this.$store.commit('setChampionship', value);
     //   },
