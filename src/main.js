@@ -10,6 +10,17 @@ Vue.use(Vue2Filters);
 
 Vue.config.productionTip = false;
 
+/* Global Guards -> Realiza uma verificação em todas as rotas da aplicação
+router.beforeEach((to, from, next) => {
+    console.log(to, from);
+    next();
+});
+
+router.afterEach(() => {
+    console.log('Renderização Ok.')
+})
+*/
+
 new Vue({
   render: (h) => h(App),
   store,

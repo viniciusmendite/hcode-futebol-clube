@@ -13,7 +13,14 @@ export default new VueRouter({
     routes: [
         { path: '/', component: Home },
         { path: '/news', alias: '/notices', component: News },
-        { path: '/news/:idnotice', name: 'notice', component: Notice },
+        { path: '/news/:idnotice',
+        name: 'notice',
+        component: Notice,
+        beforeEnter: (to, from, next) => {
+            next();
+            console.log('local')
+        }
+        },
         { path: '/admin', redirect: '/'},
         { path: '*', component: Hcode404 }
     ]
