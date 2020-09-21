@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <Header />
+    <HcodeHeader />
+    <HcodeFooter />
   </div>
 </template>
 
 <script>
-import Header from './components/Header';
+import HcodeHeader from './components/HcodeHeader';
+import HcodeFooter from './components/HcodeFooter';
 
 export default {
   name: 'App',
   components: {
-    Header,
+    HcodeHeader,
+    HcodeFooter,
   },
 };
 </script>
