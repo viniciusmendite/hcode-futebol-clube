@@ -4,9 +4,9 @@
             <img :src="require('../assets/' + this.imgName)" :alt="imgInfo">
         </div>
         <div class="col-9">
-            <h2>{{newsTitle}}</h2>
+            <slot name="title">Carregando...</slot>
 
-            <slot>Carregando... </slot>
+            <slot name="content">Carregando... </slot>
 
             <span class="font-italic">{{newsDate}}</span>
         </div>
@@ -21,10 +21,6 @@ export default {
             required: true
         },
         imgInfo: {
-            type: String,
-            required: true
-        },
-        newsTitle: {
             type: String,
             required: true
         },

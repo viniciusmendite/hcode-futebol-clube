@@ -6,10 +6,16 @@
             :key="notice.id"
             :img-name="notice.img"
             :img-info="notice.imgInfo"
-            :news-title="notice.title"
             :news-date="notice.date"
             >
-            <p>{{notice.content | truncate(200)}}</p>
+            <template #title>
+                <h2>{{notice.title}}</h2>
+            </template>
+
+            <template #content>
+                <p>{{notice.content | truncate(200)}}</p>
+            </template>
+
             </HcodeSectionNewsIndividual>
         </div>
     </section>
