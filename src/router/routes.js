@@ -11,7 +11,8 @@ export default new VueRouter({
     linkExactActiveClass: "link-active",
     routes: [
         { path: '/', component: Home },
-        { path: '/news', component: News },
-        { path: '/news/:idnotice', name: 'notice', component: Notice }
+        { path: '/news', alias: '/notices', component: News },
+        { path: '/news/:idnotice', name: 'notice', component: Notice },
+        { path: '/admin', redirect: '/'}
     ]
 })
