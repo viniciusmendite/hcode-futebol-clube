@@ -2,26 +2,13 @@
     <section>
         <div class="container">
             <HcodeSectionNewsIndividual
-            img-name="news1.jpg"
-            img-info="Notícia 1"
-            news-title="Começam treinos para a nova temporada"
-            news-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo alias, ut voluptatum corporis explicabo, consequatur ipsum facere magnam et dicta tenetur maxime aspernatur delectus laborum deserunt beatae optio eum culpa. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus saepe recusandae voluptatum dolores totam inventore praesentium nemo suscipit aliquid repellat cupiditate rerum culpa eveniet magnam, rem quos ducimus esse quasi?"
-            news-date="20/09/2020"
-            />
-
-            <HcodeSectionNewsIndividual
-            img-name="news2.jpg"
-            img-info="Notícia 2"
-            news-title="Jogo de quarta-feira termina empatado"
-            news-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo alias, ut voluptatum corporis explicabo, consequatur ipsum facere magnam et dicta tenetur maxime aspernatur delectus laborum deserunt beatae optio eum culpa. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus saepe recusandae voluptatum dolores totam inventore praesentium nemo suscipit aliquid repellat cupiditate rerum culpa eveniet magnam, rem quos ducimus esse quasi?"
-            news-date="21/09/2020"
-            />
-            <HcodeSectionNewsIndividual
-            img-name="news3.jpg"
-            img-info="Notícia 3"
-            news-title="A inauguração do novo estádio será na semana que vem"
-            news-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo alias, ut voluptatum corporis explicabo, consequatur ipsum facere magnam et dicta tenetur maxime aspernatur delectus laborum deserunt beatae optio eum culpa. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus saepe recusandae voluptatum dolores totam inventore praesentium nemo suscipit aliquid repellat cupiditate rerum culpa eveniet magnam, rem quos ducimus esse quasi?"
-            news-date="02/10/2020"
+            v-for="notice in news"
+            :key="notice.id"
+            :img-name="notice.img"
+            :img-info="notice.imgInfo"
+            :news-title="notice.title"
+            :news-content="notice.content"
+            :news-date="notice.date"
             />
         </div>
     </section>
@@ -33,6 +20,39 @@ import HcodeSectionNewsIndividual from './HcodeSectionNewsIndividual'
 export default {
     components: {
         HcodeSectionNewsIndividual,
+    },
+    data() {
+        return {
+            news: []
+        }
+    },
+    created() {
+        this.news = [
+        {
+            id: 1,
+            title: 'Começam treinos para a nova temporada',
+            content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo alias, ut voluptatum corporis explicabo, consequatur ipsum facere magnam et dicta tenetur maxime aspernatur delectus laborum deserunt beatae optio eum culpa. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus saepe recusandae voluptatum dolores totam inventore praesentium nemo suscipit aliquid repellat cupiditate rerum culpa eveniet magnam, rem quos ducimus esse quasi?',
+            date: '2020-09-20',
+            img: 'news1.jpg',
+            imgInfo: 'Notícia 1'
+        },
+                {
+            id: 2,
+            title: 'Jogo de quarta-feira termina empatado',
+            content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo alias, ut voluptatum corporis explicabo, consequatur ipsum facere magnam et dicta tenetur maxime aspernatur delectus laborum deserunt beatae optio eum culpa. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus saepe recusandae voluptatum dolores totam inventore praesentium nemo suscipit aliquid repellat cupiditate rerum culpa eveniet magnam, rem quos ducimus esse quasi?',
+            date: '2020-09-21',
+            img: 'news2.jpg',
+            imgInfo: 'Notícia 2'
+        },
+        {
+            id: 3,
+            title: 'A inauguração do novo estádio será na semana que vem',
+            content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo alias, ut voluptatum corporis explicabo, consequatur ipsum facere magnam et dicta tenetur maxime aspernatur delectus laborum deserunt beatae optio eum culpa. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus saepe recusandae voluptatum dolores totam inventore praesentium nemo suscipit aliquid repellat cupiditate rerum culpa eveniet magnam, rem quos ducimus esse quasi?',
+            date: '2020-10-02',
+            img: 'news2.jpg',
+            imgInfo: 'Notícia 2'
+        }
+        ]
     }
 }
 </script>
