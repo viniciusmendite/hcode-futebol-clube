@@ -24,7 +24,8 @@
 
 <script>
 import HcodeSectionBanner from './HcodeSectionBanner';
-import HcodeInput from './HcodeInput'
+import HcodeInput from './HcodeInput';
+import { mapState } from 'vuex';
 
 export default {
   components: {
@@ -32,14 +33,23 @@ export default {
     HcodeSectionNews: () => import('./HcodeSectionNews'),
     HcodeInput
   },
-  data() {
-      return {
-          myClub: 'Hcode Treinamentos'
-      }
-  },
   props: {
-      championship: String,
       currentComponent: String
+  },
+  computed: {
+    // buscando através do mapState
+    ...mapState({
+        championship: 'championship',
+        myClub: 'clubName'
+    })
+
+    // buscando de forma direta no store
+    //   championship() {
+    //       return this.$store.state.championship;
+    //   },
+    //   myClub() {
+    //       return this.$store.state.clubName;
+    //   }
   }
 };
 </script>

@@ -26,13 +26,12 @@ export default {
   },
   data() {
       return {
-          championship: 'Campeonato Brasileiro',
           currentSectionComponent: 'HcodeSectionBanner'
       }
   },
   methods: {
       changeChampionship(value) {
-          this.championship = value
+        this.championship = value
       },
       changeComponent(value) {
         let component;
