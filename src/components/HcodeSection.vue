@@ -24,13 +24,12 @@
 
 <script>
 import HcodeSectionBanner from './HcodeSectionBanner';
-import HcodeSectionNews from './HcodeSectionNews';
 import HcodeInput from './HcodeInput'
 
 export default {
   components: {
     HcodeSectionBanner,
-    HcodeSectionNews,
+    HcodeSectionNews: () => import('./HcodeSectionNews'),
     HcodeInput
   },
   data() {
