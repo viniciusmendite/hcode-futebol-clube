@@ -2,6 +2,8 @@
     <section>
         <div class="container">
             <HcodeSectionNewsIndividual/>
+            <HcodeSectionNewsIndividual/>
+            <HcodeSectionNewsIndividual/>
         </div>
     </section>
 </template>
@@ -17,5 +19,9 @@ export default {
 </script>
 
 <style scoped>
-
+section {
+    padding: 50px 0;
+    margin-top: 25px;
+    background-color: #F37520;
+}
 </style>

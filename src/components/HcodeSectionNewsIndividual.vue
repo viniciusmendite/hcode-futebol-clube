@@ -20,5 +20,14 @@ export default {
 </script>
 
 <style scoped>
-
+.row {
+    margin-bottom: 30px;
+}
+img {
+    width: 100%;
+}
+h2 {
+    cursor: pointer;
+    color: #fff;
+}
 </style>
