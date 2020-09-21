@@ -25,7 +25,7 @@
 <script>
 import HcodeSectionBanner from './HcodeSectionBanner';
 import HcodeInput from './HcodeInput';
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
   components: {
@@ -37,11 +37,17 @@ export default {
       currentComponent: String
   },
   computed: {
-    // buscando através do mapState
-    ...mapState({
-        championship: 'championship',
-        myClub: 'clubName'
+    // busca atraves dos getters
+    ...mapGetters({
+        championship: 'getChampionship',
+        myClub: 'getClubName'
     })
+
+    // buscando através do mapState
+    // ...mapState({
+    //     championship: 'championship',
+    //     myClub: 'clubName'
+    // })
 
     // buscando de forma direta no store
     //   championship() {
