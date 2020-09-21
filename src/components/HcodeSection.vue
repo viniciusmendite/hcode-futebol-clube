@@ -6,7 +6,8 @@
           </div>
       </div>
 
-    <component :is="currentComponent"></component>
+    <router-view></router-view>
+    <!-- <component :is="currentComponent"></component> -->
 
     <div class="container">
         <div class="row my-club mt-5">
@@ -23,14 +24,14 @@
 </template>
 
 <script>
-import HcodeSectionBanner from './HcodeSectionBanner';
+// import HcodeSectionBanner from './HcodeSectionBanner';
 import HcodeInput from './HcodeInput';
 import { mapState, mapGetters } from 'vuex';
 
 export default {
   components: {
-    HcodeSectionBanner,
-    HcodeSectionNews: () => import('./HcodeSectionNews'),
+    // HcodeSectionBanner,
+    // HcodeSectionNews: () => import('./HcodeSectionNews'),
     HcodeInput
   },
   props: {
