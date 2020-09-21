@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <HcodeHeader />
-    <HcodeSection />
+    <HcodeHeader @select-championship="changeChampionship"/>
+    <HcodeSection :championship="championship"/>
     <HcodeFooter />
   </div>
 </template>
@@ -18,6 +18,16 @@ export default {
     HcodeFooter,
     HcodeSection,
   },
+  data() {
+      return {
+          championship: 'Campeonato Brasileiro'
+      }
+  },
+  methods: {
+      changeChampionship(value) {
+          this.championship = value
+      }
+  }
 };
 </script>
 
